@@ -1,3 +1,4 @@
+use tower_http::cors::CorsLayer;
 use axum::{
     routing::{get, post},
     Json,
@@ -66,10 +67,12 @@ async fn generate(
 
 #[tokio::main]
 async fn main() {
+    let cors = CorsLayer::permissive();
     let app = Router::new()
         .route("/", get(home))
         .route("/health", get(health))
-        .route("/generate", post(generate));
+        .route("/generate", post(generate))
+         .layer(cors);
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000")
         .await
