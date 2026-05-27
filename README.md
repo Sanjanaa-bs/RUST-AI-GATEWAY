@@ -1,43 +1,63 @@
-# 🚀 Rust AI API Gateway
+# 🚀 Rust AI Gateway
 
-> A high-performance AI inference gateway built with **Rust**, **Axum**, and **Ollama** for local LLM orchestration.
-
----
-
-## ✨ Overview
-
-This project is a Rust-based backend system that exposes REST APIs for AI inference.
-The gateway receives prompts from users, forwards them to local language models through Ollama, and returns generated AI responses asynchronously.
+> A full-stack AI inference platform built with Rust, Axum, Next.js, and Ollama for local LLM orchestration.
 
 ---
 
-## ⚡ Features
+# ✨ Overview
 
-✅ Async backend using Tokio
+Rust AI Gateway is a high-performance AI infrastructure project that exposes REST APIs for AI inference and connects them with a modern frontend interface.
+
+The system receives prompts from users, routes them through a Rust backend, forwards requests to local LLMs using Ollama, and returns generated AI responses in real time.
+
+---
+
+# 🏗️ Architecture
+
+```text
+Frontend (Next.js)
+        ↓
+Rust API Gateway
+        ↓
+Ollama
+        ↓
+TinyLlama AI Model
+```
+
+---
+
+# ⚡ Features
+
+✅ Full-stack AI application
+✅ Rust async backend using Tokio
 ✅ REST APIs with Axum
+✅ Next.js frontend interface
 ✅ JSON request & response handling
 ✅ Local LLM integration using Ollama
-✅ AI prompt routing system
-✅ Modular backend architecture
 ✅ Real-time AI response generation
+✅ Modular backend architecture
+✅ AI prompt routing system
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-| Technology | Purpose            |
-| ---------- | ------------------ |
-| Rust       | Backend Language   |
-| Axum       | Web Framework      |
-| Tokio      | Async Runtime      |
-| Reqwest    | HTTP Client        |
-| Serde      | JSON Serialization |
-| Ollama     | Local LLM Serving  |
-| TinyLlama  | AI Model           |
+| Technology   | Purpose            |
+| ------------ | ------------------ |
+| Rust         | Backend Language   |
+| Axum         | Web Framework      |
+| Tokio        | Async Runtime      |
+| Reqwest      | HTTP Client        |
+| Serde        | JSON Serialization |
+| Next.js      | Frontend Framework |
+| TypeScript   | Frontend Language  |
+| Tailwind CSS | UI Styling         |
+| Ollama       | Local LLM Serving  |
+| TinyLlama    | AI Model           |
 
 ---
 
-## 📡 API Endpoints
+# 📡 API Endpoints
 
 | Method | Endpoint    | Description          |
 | ------ | ----------- | -------------------- |
@@ -47,7 +67,7 @@ The gateway receives prompts from users, forwards them to local language models 
 
 ---
 
-## 🧠 Example Request
+# 🧠 Example Request
 
 ```json
 {
@@ -57,7 +77,7 @@ The gateway receives prompts from users, forwards them to local language models 
 
 ---
 
-## 🤖 Example Response
+# 🤖 Example Response
 
 ```json
 {
@@ -67,21 +87,23 @@ The gateway receives prompts from users, forwards them to local language models 
 
 ---
 
-## ▶️ Running the Project
+# ▶️ Running the Project
 
-### Start Ollama
+## 1. Start Ollama
 
 ```bash
 ollama run tinyllama
 ```
 
-### Run Backend
+---
+
+## 2. Start Rust Backend
 
 ```bash
 cargo run
 ```
 
-Server runs on:
+Backend runs on:
 
 ```text
 http://localhost:3000
@@ -89,15 +111,36 @@ http://localhost:3000
 
 ---
 
-## 🏗️ Architecture
+## 3. Start Frontend
+
+```bash
+cd frontend
+npm run dev -- -p 3002
+```
+
+Frontend runs on:
 
 ```text
-User → Rust API Gateway → Ollama → TinyLlama → AI Response
+http://localhost:3002
 ```
 
 ---
 
-## 🔥 Future Improvements
+# 📂 Project Structure
+
+```text
+rust-ai-gateway/
+│
+├── src/              # Rust backend
+├── frontend/         # Next.js frontend
+├── Cargo.toml
+├── README.md
+└── .gitignore
+```
+
+---
+
+# 🔥 Future Improvements
 
 * JWT Authentication
 * Redis Caching
@@ -105,20 +148,22 @@ User → Rust API Gateway → Ollama → TinyLlama → AI Response
 * Docker Deployment
 * WebSocket Streaming
 * Multi-Model Routing
+* AI Agent Support
 
 ---
 
-## 📌 Project Goal
+# 📌 Project Goal
 
 The goal of this project is to explore:
 
 * AI infrastructure engineering
 * asynchronous backend systems
 * local LLM orchestration
-* high-performance API development using Rust
+* full-stack AI application development
+* high-performance APIs using Rust
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 Built with Rust ❤️
